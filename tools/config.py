@@ -1,0 +1,6 @@
+app_key = '********'
+app_secret = '********************'
+callback_url = 'https://api.weibo.com/oauth2/default.html'
+user_email = '新浪微博登陆邮箱'
+user_password = '新浪微博登陆密码'
+user_email_password = '登陆邮箱的邮箱密码'
