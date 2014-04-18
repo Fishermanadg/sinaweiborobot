@@ -16,7 +16,7 @@ def get_img():
     page_id = random.randint(1, 10)
     img_id = random.choice(range(20))
     try:
-        html = requests.get('http://www.topit.me/user/120568?p=%s' % page_id)
+        html = requests.get('http://www.topit.me/?p=%s' % page_id)
         img_page = re.findall(re_imghtml, html.content)[img_id]
         # image_web_url
         p = 'The URL of image web: %s.\n' % img_page
