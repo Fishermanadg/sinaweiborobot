@@ -1,22 +1,16 @@
 #!/usr/bin/env python
 # --*-- coding:utf-8 --*--
-import urllib
-import re
-import requests
-import random
 
 
-# update localtion date
-def update_localtion_date(date, last_cwi='0', last_cci='0', last_aci='0'):
-    if (last_cwi == '1' or last_cci == '1' or last_aci == '1'):
+def update_localtion_date(date, last_cwi='0', last_cci='0'):
+    # update localtion date
+    if (last_cwi == '1' or last_cci == '1'):
         with open('./res/weibo_id.txt', 'r') as f:
             a = f.readlines()
         if (last_cwi == '1'):
             a[0] = str(date) + '\n'
-        elif (last_cci == '1'):
-            a[1] = str(date) + '\n'
         else:
-            a[2] = str(date) + '\n'
+            a[1] = str(date)
         with open('./res/weibo_id.txt', 'w') as f:
             f.writelines(a)
     else:
@@ -24,8 +18,9 @@ def update_localtion_date(date, last_cwi='0', last_cci='0', last_aci='0'):
     return None
 
 
-# logging
+
 def call_log(log, error='0', call_me_weibo='0', comments_weibo='0'):
+    # logging
     if (error == '1'):
         try:
             with open('./res/errors.log', 'a') as e:
