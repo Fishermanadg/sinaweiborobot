@@ -44,8 +44,12 @@ def get_weather(city=None, capital=None):
     else:
         weather_info = ''
         weather_day = ''
-        city_name = urllib.quote(city)
-        capital_name = urllib.quote(capital)
+        try:
+            city_name = urllib.quote(city)
+            capital_name = urllib.quote(capital)
+        except:
+            city_name = city
+            capital_name = capital
         # try getweather information from city_name
         try:
             c_name = city_name
