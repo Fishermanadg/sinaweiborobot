@@ -73,8 +73,7 @@ def reply_weibo(client,
             name, created_at, last_callme_weibo_content
         )
         call_log(call_me_log, call_me_weibo='1')
-        print name
-        print last_cwi,con
+
         # Reply weibo
         print (' Reply Processing...')
         try:
